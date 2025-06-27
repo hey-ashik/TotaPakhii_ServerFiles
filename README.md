@@ -33,7 +33,7 @@ The frontend is a static, responsive website that serves as the user-facing inte
 
 ### 🚀 Live Demo
 
-Experience the live frontend: **[https://daffo-pilot.ashiksays.com/](https://daffo-pilot.ashiksays.com/)**
+Experience the live frontend: **[https://totapakhi.ashiksays.com/](totapakhi.ashiksays.com/)**
 
 ### Frontend Interaction Flow
 
@@ -65,7 +65,7 @@ To run the frontend locally, no complex setup is required:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/your-repository-name.git
+    git clone https://github.com/hey-ashik/Totapakhii_ServerFiles.git
     cd your-repository-name
     ```
 2.  **Open `index.html`:**
