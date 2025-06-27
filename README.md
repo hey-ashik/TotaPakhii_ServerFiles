@@ -24,7 +24,7 @@
 
 This project is a demonstration of a complete, end-to-end AI system. The **frontend** is a visually appealing, feature-rich landing page built with HTML, CSS, and JavaScript. The **backend** is a sophisticated Python Flask API that serves as the "brain," using a Retrieval-Augmented Generation (RAG) model to answer questions from a private knowledge base and from live web searches.
 
----
+```bash
 
 +----------------+      API Call      +-----------------+       +----------------+
 |                |  (HTTP Request)  |                 |------>|  Groq (LLM)    |
@@ -35,7 +35,7 @@ This project is a demonstration of a complete, end-to-end AI system. The **front
 +----------------+                    +-----------------+       +----------------+
                                                          ------>| Tavily (Web)   |
                                                                  +----------------+
-
+ ```
 ## 🎨 Frontend: The User Experience
 
 The frontend is a static, responsive website that serves as the user-facing interface for the TotaPakhi AI agent. It is designed with a modern "glassmorphism" aesthetic and is optimized for all screen sizes.
