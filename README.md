@@ -14,365 +14,132 @@
 
 ---
 
-## 📋 Table of Contents
 
-- [🎯 Overview](#-overview)
-- [✨ Features](#-features)
-- [🏗️ Architecture](#️-architecture)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [⚡ Quick Start](#-quick-start)
-- [🔧 Installation](#-installation)
-- [📝 API Documentation](#-api-documentation)
-- [🌐 Environment Variables](#-environment-variables)
-- [🧪 Testing](#-testing)
-- [📦 Deployment](#-deployment)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [👥 Team](#-team)
 
----
-
-## 🎯 Overview
-
-TotaPakhii is a modern, scalable full-stack application designed to [Brief description of what your app does]. Built with cutting-edge technologies and following industry best practices, it provides [key value propositions].
-
-### 🌟 Key Highlights
-
-- **Modern Architecture**: Clean, maintainable codebase with separation of concerns
-- **Scalable Design**: Built to handle growth and high traffic
-- **Responsive UI**: Optimized for all devices and screen sizes
-- **Secure**: Implements industry-standard security practices
-- **Performance Optimized**: Fast loading times and smooth user experience
-
----
-
-## ✨ Features
-
-### 🎨 Frontend Features
-- **Modern UI/UX**: Clean, intuitive interface with smooth animations
-- **Responsive Design**: Mobile-first approach with cross-browser compatibility
-- **Real-time Updates**: Live data synchronization
-- **Progressive Web App**: Offline functionality and app-like experience
-- **Accessibility**: WCAG 2.1 compliant design
-
-### 🔧 Backend Features
-- **RESTful APIs**: Well-structured API endpoints
-- **Authentication & Authorization**: JWT-based secure user management
-- **Data Validation**: Comprehensive input validation and sanitization
-- **Error Handling**: Robust error management and logging
-- **Rate Limiting**: API protection against abuse
-- **Database Optimization**: Efficient queries and indexing
-
----
-
-## 🏗️ Architecture
-
-```
-TotaPakhii/
-├── frontend/                 # React/Next.js Frontend
-│   ├── src/
-│   │   ├── components/      # Reusable UI components
-│   │   ├── pages/          # Application pages
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API service layer
-│   │   ├── utils/          # Utility functions
-│   │   └── styles/         # Styling files
-│   ├── public/             # Static assets
-│   └── package.json
-│
-├── backend/                 # Node.js/Express Backend
-│   ├── src/
-│   │   ├── controllers/    # Request handlers
-│   │   ├── models/         # Database models
-│   │   ├── routes/         # API routes
-│   │   ├── middleware/     # Custom middleware
-│   │   ├── services/       # Business logic
-│   │   └── utils/          # Helper functions
-│   ├── config/             # Configuration files
-│   └── package.json
-│
-├── docs/                   # Documentation
-├── tests/                  # Test files
-└── docker-compose.yml      # Docker configuration
-```
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **Framework**: React 18+ / Next.js 14+
-- **Styling**: Tailwind CSS / Styled Components
-- **State Management**: Redux Toolkit / Zustand
-- **HTTP Client**: Axios / Fetch API
-- **Testing**: Jest + React Testing Library
-- **Build Tool**: Vite / Webpack
-
-### Backend
-- **Runtime**: Node.js 18+
-- **Framework**: Express.js / Fastify
-- **Database**: MongoDB / PostgreSQL
-- **ORM/ODM**: Mongoose / Prisma
-- **Authentication**: JWT / Passport.js
-- **Validation**: Joi / Yup
-- **Testing**: Jest + Supertest
-
-### DevOps & Tools
-- **Containerization**: Docker + Docker Compose
-- **CI/CD**: GitHub Actions
-- **Monitoring**: PM2 / New Relic
-- **Documentation**: Swagger/OpenAPI
-- **Code Quality**: ESLint + Prettier
-
----
-
-## ⚡ Quick Start
-
-### Prerequisites
-- Node.js 18.0 or higher
-- npm or yarn
-- MongoDB/PostgreSQL (local or cloud)
-- Git
-
-### One-Command Setup
-```bash
-git clone https://github.com/hey-ashik/TotaPakhii_ServerFiles.git
-cd TotaPakhii_ServerFiles
-npm run setup
-```
-
-This will install all dependencies and set up both frontend and backend.
-
----
-
-## 🔧 Installation
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/hey-ashik/TotaPakhii_ServerFiles.git
-cd TotaPakhii_ServerFiles
-```
-
-### 2. Backend Setup
-```bash
-cd backend
-npm install
-cp .env.example .env
-# Configure your environment variables
-npm run dev
-```
-
-### 3. Frontend Setup
-```bash
-cd frontend
-npm install
-cp .env.example .env.local
-# Configure your environment variables
-npm run dev
-```
-
-### 4. Using Docker (Recommended)
-```bash
-docker-compose up -d
-```
-
----
-
-## 📝 API Documentation
-
-### Base URL
-```
-Development: http://localhost:3000/api
-Production: https://your-domain.com/api
-```
-
-### Authentication
-All protected endpoints require a Bearer token:
-```bash
-Authorization: Bearer <your-jwt-token>
-```
-
-### Key Endpoints
-
-#### Authentication
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `POST /api/auth/logout` - User logout
-- `GET /api/auth/profile` - Get user profile
-
-#### [Your Main Feature]
-- `GET /api/[resource]` - Get all resources
-- `POST /api/[resource]` - Create new resource
-- `GET /api/[resource]/:id` - Get specific resource
-- `PUT /api/[resource]/:id` - Update resource
-- `DELETE /api/[resource]/:id` - Delete resource
-
-For complete API documentation, visit: [Swagger Documentation](http://localhost:3000/api-docs)
-
----
-
-## 🌐 Environment Variables
-
-### Backend (.env)
-```bash
-# Server Configuration
-PORT=3000
-NODE_ENV=development
-
-# Database
-DATABASE_URL=mongodb://localhost:27017/totapakhii
-# or for PostgreSQL
-# DATABASE_URL=postgresql://username:password@localhost:5432/totapakhii
-
-# JWT
-JWT_SECRET=your-super-secret-jwt-key
-JWT_EXPIRES_IN=7d
-
-# External Services
-CLOUDINARY_NAME=your-cloudinary-name
-CLOUDINARY_API_KEY=your-api-key
-CLOUDINARY_API_SECRET=your-api-secret
-
-# Email Service
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-```
-
-### Frontend (.env.local)
-```bash
-# API Configuration
-NEXT_PUBLIC_API_URL=http://localhost:3000/api
-NEXT_PUBLIC_APP_URL=http://localhost:3001
-
-# External Services
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=your-ga-id
-NEXT_PUBLIC_SENTRY_DSN=your-sentry-dsn
-```
-
----
-
-## 🧪 Testing
-
-### Running Tests
-```bash
-# Backend tests
-cd backend
-npm test
-
-# Frontend tests
-cd frontend
-npm test
-
-# Run all tests
-npm run test:all
-
-# Coverage report
-npm run test:coverage
-```
-
-### Test Structure
-- **Unit Tests**: Individual function testing
-- **Integration Tests**: API endpoint testing
-- **E2E Tests**: Full user journey testing
-
----
-
-## 📦 Deployment
-
-### Production Build
-```bash
-# Build frontend
-cd frontend
-npm run build
-
-# Build backend
-cd backend
-npm run build
-```
-
-### Docker Deployment
-```bash
-# Build and run production containers
-docker-compose -f docker-compose.prod.yml up -d
-```
-
-### Cloud Deployment
-- **Frontend**: Vercel, Netlify, or AWS S3
-- **Backend**: Heroku, DigitalOcean, or AWS EC2
-- **Database**: MongoDB Atlas, AWS RDS, or DigitalOcean Databases
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
-
-### Code Style
-- Follow ESLint and Prettier configurations
-- Write meaningful commit messages
-- Add tests for new features
-- Update documentation as needed
-
-### Pull Request Guidelines
-- Provide clear description of changes
-- Include screenshots for UI changes
-- Ensure all tests pass
-- Update CHANGELOG.md if applicable
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## 👥 Team
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/hey-ashik">
-          <img src="https://github.com/hey-ashik.png" width="100px;" alt="Ashik"/><br />
-          <sub><b>Ashik</b></sub>
-        </a><br />
-        <a href="https://github.com/hey-ashik/TotaPakhii_ServerFiles/commits?author=hey-ashik" title="Code">💻</a>
-        <a href="#maintenance-hey-ashik" title="Maintenance">🚧</a>
-      </td>
-      <!-- Add more team members as needed -->
-    </tr>
-  </table>
-</div>
-
----
-
-## 📞 Support
-
-- **Documentation**: [Wiki](https://github.com/hey-ashik/TotaPakhii_ServerFiles/wiki)
-- **Issues**: [GitHub Issues](https://github.com/hey-ashik/TotaPakhii_ServerFiles/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/hey-ashik/TotaPakhii_ServerFiles/discussions)
-- **Email**: your-email@example.com
-
----
-
-## 🙏 Acknowledgments
-
-- Special thanks to all contributors
-- Inspiration from [mention any inspirations]
-- Built with ❤️ by the TotaPakhii team
-
----
-
-<div align="center">
-  <p>Made with ❤️ in Bangladesh 🇧🇩</p>
-  <p>⭐ Star this repo if you found it helpful!</p>
-</div>
+<p align="center">
+<a href="https://daffo-pilot.ashiksays.com/">
+<img src="https://i.imgur.com/k6Kx07p.png" alt="TotaPakhi Logo" width="150"/>
+</a>
+</p>
+<h1 align="center">TotaPakhi: Full-Stack Conversational AI Platform</h1>
+<p align="center">
+This repository contains the complete source code for TotaPakhi, a full-stack AI chat application. It includes a modern, responsive frontend and a powerful, high-performance backend built on a hybrid RAG architecture.
+</p>
+<p align="center">
+<img src="https://img.shields.io/badge/Stack-Full_Stack-blueviolet" alt="Full Stack">
+<img src="https://img.shields.io/badge/Frontend-HTML_|_CSS_|_JS-orange" alt="Frontend Tech">
+<img src="https://img.shields.io/badge/Backend-Python_|_Flask-blue.svg" alt="Backend Tech">
+<img src="https://img.shields.io/badge/LLM-Llama_3.3_@_Groq-purple.svg" alt="LLM">
+<img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+</p>
+This project is a demonstration of a complete, end-to-end AI system. The frontend is a visually appealing, feature-rich landing page built with HTML, CSS, and JavaScript. The backend is a sophisticated Python Flask API that serves as the "brain," using a Retrieval-Augmented Generation (RAG) model to answer questions from a private knowledge base and from live web searches.
+🎨 Frontend
+The frontend is a static, responsive website that serves as the user-facing interface for the TotaPakhi AI agent. It is designed with a modern "glassmorphism" aesthetic and is optimized for all screen sizes.
+🚀 Live Demo
+Experience the live frontend: https://daffo-pilot.ashiksays.com/
+✨ Frontend Features
+📱 Modern & Responsive UI: A beautiful design that works seamlessly on desktops, tablets, and mobile devices.
+🤖 AI Chat Interface: An "Ask Ai Agent" button that opens a full-screen chat popup, which communicates with the backend API.
+🧠 Data Contribution Form: A dedicated section allowing users to submit documents to train a personalized AI assistant.
+🎮 Classic Pong Game: An interactive Pong game built with HTML5 Canvas for user engagement.
+📖 Integrated Blog & Project Showcase: Sections for articles, other projects, and a user guide.
+🚀 Zero Dependencies: Built with pure HTML, CSS, and Vanilla JavaScript for maximum performance and portability.
+💻 Frontend Technology Stack
+Structure: HTML5
+Styling: CSS3 (with extensive use of Flexbox, CSS Grid, and Media Queries)
+Interactivity: Vanilla JavaScript
+Design: Glassmorphism
+Form Handling: Formspree
+▶️ Running the Frontend
+To run the frontend locally, no complex setup is required:
+Clone the repository:
+Generated bash
+git clone https://github.com/your-username/your-repository-name.git
+cd your-repository-name
+Use code with caution.
+Bash
+Open index.html:
+Simply open the index.html file in your web browser. For a better development experience with live reloading, you can use a tool like the Live Server extension in VS Code.
+🧠 Backend
+The backend is a high-performance Python server that powers the conversational AI. It implements a Hybrid RAG architecture to provide accurate, context-aware answers from multiple information sources.
+✨ Backend Features
+🧠 Multi-Source RAG: Answers questions using information from both a private document knowledge base (Pinecone) and live web searches (Tavily).
+📚 Broad Document Support: An ingestion pipeline (VectorEmbedding.py) that processes .pdf, .docx, .csv, .xlsx, .pptx, and .txt files.
+🚀 High-Speed Inference: Uses the Groq API for ultra-low latency responses from the Llama 3.3 model.
+🗣️ Conversational Memory: Maintains chat history to understand context across multiple interactions in a single session.
+⚡ Scalable Vector Search: Built on Pinecone for efficient, production-grade semantic search.
+🌐 RESTful API: A well-structured Flask API with endpoints for chat, session management, and health checks, ready for frontend integration.
+🏛️ Backend Architecture
+The backend consists of an Ingestion Pipeline to build the knowledge base and a Serving API to handle user requests.
+<p align="center">
+<img src="https://i.imgur.com/h5TqQ5E.png" alt="Architecture Diagram" width="900"/>
+</p>
+Ingestion (VectorEmbedding.py): Documents in the documents/ folder are loaded, chunked, converted to vector embeddings, and stored in a Pinecone index.
+Serving (ServerActive.py): The Flask server receives a user query, retrieves relevant context from Pinecone or Tavily, and sends a rich prompt to Groq's Llama 3.3 model to generate the final answer.
+🛠️ Backend Technology Stack
+Category	Technology
+Backend Framework	
+![alt text](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+LLM Inference	
+![alt text](https://img.shields.io/badge/Groq-000000?style=for-the-badge&logo=groq&logoColor=white)
+Vector Database	
+![alt text](https://img.shields.io/badge/Pinecone-0C51C3?style=for-the-badge&logo=pinecone&logoColor=white)
+AI Framework	LangChain
+Web Search	Tavily Search API
+Document Parsing	pypdf, pandas, openpyxl, python-docx, python-pptx
+▶️ Running the Backend
+1. Setup
+Navigate to the project directory and set up a Python virtual environment.
+Generated bash
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+
+# For Windows
+python -m venv venv
+venv\Scripts\activate
+Use code with caution.
+Bash
+Install dependencies:
+Generated bash
+pip install -r requirements.txt
+Use code with caution.
+Bash
+Configure Environment Variables: Create a .env file in the project root and add your API keys:
+Generated env
+# .env file
+GROQ_API_KEY="your_groq_api_key"
+PINECONE_API_KEY="your_pinecone_api_key"
+PINECONE_INDEX_NAME="pdfrag"
+TAVILY_API_KEY="your_tavily_api_key"
+Use code with caution.
+Env
+2. Usage
+Ingest Your Documents:
+Place your files (.pdf, .docx, etc.) inside the documents/ folder.
+Run the ingestion script to populate your Pinecone database. You only need to do this when your documents change.
+Generated bash
+python VectorEmbedding.py
+Use code with caution.
+Bash
+Start the API Server:
+Once your data is ingested, start the Flask server.
+Generated bash
+python ServerActive.py
+Use code with caution.
+Bash
+The API will be available at http://127.0.0.1:7860.
+🔗 How It All Connects
+The frontend and backend are designed to work together seamlessly:
+The user visits the frontend website (index.html).
+Clicking the "Ask Ai Agent" button opens a chat modal.
+When the user sends a message from this modal, the frontend's JavaScript makes a POST request to the backend's /api/chat endpoint.
+The backend processes the request, gets an answer from the AI, and returns it as a JSON response.
+The frontend JavaScript receives the response and displays the AI's answer in the chat window.
+👨‍💻 Author
+This project was designed and developed by Ashikul Islam.
+Facebook: Ashikul Islam
+Email: <a href="mailto:ashikulislam2070@gmail.com">ashikulislam2070@gmail.com</a>
+WhatsApp: +8801792250709
+📄 License
+This project is licensed under the MIT License.
