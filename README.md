@@ -26,6 +26,16 @@ This project is a demonstration of a complete, end-to-end AI system. The **front
 
 ---
 
++----------------+      API Call      +-----------------+       +----------------+
+|                |  (HTTP Request)  |                 |------>|  Groq (LLM)    |
+| TotaPakhi      +----------------->|  Flask Backend  |       +----------------+
+| Frontend       |                  |  (ServerActive) |       +----------------+
+| (Browser)      |<-----------------+                 |------>| Pinecone (Docs)|
+|                |    JSON Response |                 |       +----------------+
++----------------+                    +-----------------+       +----------------+
+                                                         ------>| Tavily (Web)   |
+                                                                 +----------------+
+
 ## 🎨 Frontend: The User Experience
 
 The frontend is a static, responsive website that serves as the user-facing interface for the TotaPakhi AI agent. It is designed with a modern "glassmorphism" aesthetic and is optimized for all screen sizes.
