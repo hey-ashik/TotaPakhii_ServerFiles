@@ -1,242 +1,378 @@
-# 🛠 TotaPakhii - Agentic RAG Chat Application
+# 🦜 TotaPakhii
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Gradio](https://img.shields.io/badge/Interface-Gradio-orange.svg)](https://gradio.app/)
+<div align="center">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue" alt="Version">
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen" alt="PRs Welcome">
+</div>
 
-**TotaPakhii** is an advanced AI-powered chat application that leverages Large Language Models (LLM) and Retrieval-Augmented Generation (RAG) methodology to provide intelligent document-based question answering. Built with modern technologies, it offers conversational memory, context awareness, and semantic document search capabilities.
+<div align="center">
+  <h3>🚀 A Modern Full-Stack Application</h3>
+  <p><em>Bringing innovation to [Your Application Domain]</em></p>
+</div>
+
+---
+
+## 📋 Table of Contents
+
+- [🎯 Overview](#-overview)
+- [✨ Features](#-features)
+- [🏗️ Architecture](#️-architecture)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [⚡ Quick Start](#-quick-start)
+- [🔧 Installation](#-installation)
+- [📝 API Documentation](#-api-documentation)
+- [🌐 Environment Variables](#-environment-variables)
+- [🧪 Testing](#-testing)
+- [📦 Deployment](#-deployment)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [👥 Team](#-team)
+
+---
+
+## 🎯 Overview
+
+TotaPakhii is a modern, scalable full-stack application designed to [Brief description of what your app does]. Built with cutting-edge technologies and following industry best practices, it provides [key value propositions].
+
+### 🌟 Key Highlights
+
+- **Modern Architecture**: Clean, maintainable codebase with separation of concerns
+- **Scalable Design**: Built to handle growth and high traffic
+- **Responsive UI**: Optimized for all devices and screen sizes
+- **Secure**: Implements industry-standard security practices
+- **Performance Optimized**: Fast loading times and smooth user experience
+
+---
 
 ## ✨ Features
 
-- 🧠 **Intelligent RAG System**: Advanced retrieval-augmented generation for accurate document-based responses
-- 💬 **Conversational Memory**: Maintains context across conversations for natural dialogue flow
-- 📚 **Multi-PDF Support**: Process and query multiple PDF documents simultaneously
-- 🔍 **Semantic Search**: Vector-based similarity search using state-of-the-art embeddings
-- 🎨 **Modern UI**: Claude AI-inspired interface with dark theme and responsive design
-- 📱 **Mobile Responsive**: Optimized for both desktop and mobile devices
-- 💾 **Chat History**: Persistent conversation storage with session management
-- 🚀 **Real-time Processing**: Fast document retrieval and response generation
+### 🎨 Frontend Features
+- **Modern UI/UX**: Clean, intuitive interface with smooth animations
+- **Responsive Design**: Mobile-first approach with cross-browser compatibility
+- **Real-time Updates**: Live data synchronization
+- **Progressive Web App**: Offline functionality and app-like experience
+- **Accessibility**: WCAG 2.1 compliant design
+
+### 🔧 Backend Features
+- **RESTful APIs**: Well-structured API endpoints
+- **Authentication & Authorization**: JWT-based secure user management
+- **Data Validation**: Comprehensive input validation and sanitization
+- **Error Handling**: Robust error management and logging
+- **Rate Limiting**: API protection against abuse
+- **Database Optimization**: Efficient queries and indexing
+
+---
 
 ## 🏗️ Architecture
 
 ```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   PDF Documents │───▶│  Vector Embedding │───▶│   Pinecone DB   │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-                                                         │
-                                                         ▼
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Gradio UI     │◄───│   Chat Server    │◄───│  LangChain RAG  │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-                                │
-                                ▼
-                       ┌─────────────────┐
-                       │   Groq LLM      │
-                       │  (Llama 3.3)    │
-                       └─────────────────┘
+TotaPakhii/
+├── frontend/                 # React/Next.js Frontend
+│   ├── src/
+│   │   ├── components/      # Reusable UI components
+│   │   ├── pages/          # Application pages
+│   │   ├── hooks/          # Custom React hooks
+│   │   ├── services/       # API service layer
+│   │   ├── utils/          # Utility functions
+│   │   └── styles/         # Styling files
+│   ├── public/             # Static assets
+│   └── package.json
+│
+├── backend/                 # Node.js/Express Backend
+│   ├── src/
+│   │   ├── controllers/    # Request handlers
+│   │   ├── models/         # Database models
+│   │   ├── routes/         # API routes
+│   │   ├── middleware/     # Custom middleware
+│   │   ├── services/       # Business logic
+│   │   └── utils/          # Helper functions
+│   ├── config/             # Configuration files
+│   └── package.json
+│
+├── docs/                   # Documentation
+├── tests/                  # Test files
+└── docker-compose.yml      # Docker configuration
 ```
 
-## 🚀 Quick Start
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: React 18+ / Next.js 14+
+- **Styling**: Tailwind CSS / Styled Components
+- **State Management**: Redux Toolkit / Zustand
+- **HTTP Client**: Axios / Fetch API
+- **Testing**: Jest + React Testing Library
+- **Build Tool**: Vite / Webpack
+
+### Backend
+- **Runtime**: Node.js 18+
+- **Framework**: Express.js / Fastify
+- **Database**: MongoDB / PostgreSQL
+- **ORM/ODM**: Mongoose / Prisma
+- **Authentication**: JWT / Passport.js
+- **Validation**: Joi / Yup
+- **Testing**: Jest + Supertest
+
+### DevOps & Tools
+- **Containerization**: Docker + Docker Compose
+- **CI/CD**: GitHub Actions
+- **Monitoring**: PM2 / New Relic
+- **Documentation**: Swagger/OpenAPI
+- **Code Quality**: ESLint + Prettier
+
+---
+
+## ⚡ Quick Start
 
 ### Prerequisites
+- Node.js 18.0 or higher
+- npm or yarn
+- MongoDB/PostgreSQL (local or cloud)
+- Git
 
-- Python 3.8 or higher
-- Pinecone API account
-- Groq API account
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/totapakhii.git
-   cd totapakhii
-   ```
-
-2. **Create and activate virtual environment**
-   ```bash
-   python -m venv venv
-   
-   # On Windows
-   venv\Scripts\activate
-   
-   # On macOS/Linux
-   source venv/bin/activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Set up environment variables**
-   
-   Create a `.env` file in the project root:
-   ```env
-   PINECONE_API_KEY=your_pinecone_api_key_here
-   GROQ_API_KEY=your_groq_api_key_here
-   ```
-
-### Document Preparation
-
-1. **Add your PDF documents**
-   ```bash
-   mkdir documents
-   # Place your PDF files in the documents/ folder
-   ```
-
-2. **Create vector embeddings**
-   ```bash
-   python VectorEmbedding.py
-   ```
-   This will:
-   - Process all PDFs in the `documents/` folder
-   - Create vector embeddings using HuggingFace sentence transformers
-   - Store embeddings in Pinecone vector database
-
-### Launch the Application
-
+### One-Command Setup
 ```bash
-python NewActiveServer.py
+git clone https://github.com/hey-ashik/TotaPakhii_ServerFiles.git
+cd TotaPakhii_ServerFiles
+npm run setup
 ```
 
-The application will be available at: `http://127.0.0.1:7860`
+This will install all dependencies and set up both frontend and backend.
 
-## 💡 Usage
+---
 
-1. **Start a New Chat**: Click the "+ New Chat" button to begin a conversation
-2. **Ask Questions**: Type your questions about the uploaded documents
-3. **View Sources**: Expand the "Source Documents" section to see relevant document excerpts
-4. **Browse History**: Use the sidebar to navigate between previous conversations
-5. **Clear History**: Use "Clear All History" to reset all conversations
+## 🔧 Installation
 
-## 🛠️ Technology Stack
-
-| Component | Technology | Purpose |
-|-----------|------------|---------|
-| **Frontend** | Gradio | Interactive web interface |
-| **Backend** | Python, FastAPI | Application server |
-| **LLM** | Groq (Llama 3.3-70B) | Language model for responses |
-| **Embeddings** | HuggingFace Transformers | Document vectorization |
-| **Vector DB** | Pinecone | Semantic search and retrieval |
-| **RAG Framework** | LangChain | Document processing pipeline |
-| **PDF Processing** | PyPDF | Document text extraction |
-
-## 📁 Project Structure
-
-```
-totapakhii/
-├── NewActiveServer.py          # Main chat server application
-├── VectorEmbedding.py         # Document processing and embedding
-├── requirements.txt           # Python dependencies
-├── README.md                 # Project documentation
-├── .env                      # Environment variables (create this)
-├── documents/                # PDF documents folder (create this)
-│   ├── document1.pdf
-│   ├── document2.pdf
-│   └── ...
-└── venv/                     # Virtual environment (auto-generated)
-```
-
-## ⚙️ Configuration
-
-### Model Settings
-
-You can customize the LLM behavior in `NewActiveServer.py`:
-
-```python
-llm = ChatGroq(
-    groq_api_key=GROQ_API_KEY,
-    model_name="llama-3.3-70b-versatile",
-    temperature=0.5,        # Adjust creativity (0.0-1.0)
-    max_tokens=500         # Response length limit
-)
-```
-
-### Document Processing
-
-Modify chunk settings in `VectorEmbedding.py`:
-
-```python
-def split_documents(documents, chunk_size=500, chunk_overlap=100):
-    # Adjust chunk_size and chunk_overlap for optimal performance
-```
-
-## 🔧 API Keys Setup
-
-### Pinecone Setup
-1. Sign up at [Pinecone](https://www.pinecone.io/)
-2. Create a new project
-3. Get your API key from the dashboard
-4. Note your environment and index settings
-
-### Groq Setup
-1. Visit [Groq Console](https://console.groq.com/)
-2. Create an account and generate an API key
-3. Choose your preferred model (Llama 3.3-70B recommended)
-
-## 🚨 Troubleshooting
-
-### Common Issues
-
-**Issue**: `ModuleNotFoundError` when running the application
+### 1. Clone the Repository
 ```bash
-# Solution: Ensure virtual environment is activated and dependencies are installed
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install -r requirements.txt
+git clone https://github.com/hey-ashik/TotaPakhii_ServerFiles.git
+cd TotaPakhii_ServerFiles
 ```
 
-**Issue**: Pinecone connection errors
+### 2. Backend Setup
 ```bash
-# Solution: Verify your API key and index configuration
-# Check if the index exists in your Pinecone dashboard
+cd backend
+npm install
+cp .env.example .env
+# Configure your environment variables
+npm run dev
 ```
 
-**Issue**: No documents found
+### 3. Frontend Setup
 ```bash
-# Solution: Ensure PDFs are in the documents/ folder
-mkdir documents
-# Add your PDF files to this folder
-python VectorEmbedding.py
+cd frontend
+npm install
+cp .env.example .env.local
+# Configure your environment variables
+npm run dev
 ```
 
-## 📊 Performance Optimization
+### 4. Using Docker (Recommended)
+```bash
+docker-compose up -d
+```
 
-- **Chunk Size**: Smaller chunks (300-500 tokens) work better for specific queries
-- **Retrieval Count**: Adjust `k` parameter in retriever for more/fewer source documents
-- **Model Selection**: Use `llama-3.1-8b-instant` for faster responses, `llama-3.3-70b-versatile` for better quality
+---
+
+## 📝 API Documentation
+
+### Base URL
+```
+Development: http://localhost:3000/api
+Production: https://your-domain.com/api
+```
+
+### Authentication
+All protected endpoints require a Bearer token:
+```bash
+Authorization: Bearer <your-jwt-token>
+```
+
+### Key Endpoints
+
+#### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `POST /api/auth/logout` - User logout
+- `GET /api/auth/profile` - Get user profile
+
+#### [Your Main Feature]
+- `GET /api/[resource]` - Get all resources
+- `POST /api/[resource]` - Create new resource
+- `GET /api/[resource]/:id` - Get specific resource
+- `PUT /api/[resource]/:id` - Update resource
+- `DELETE /api/[resource]/:id` - Delete resource
+
+For complete API documentation, visit: [Swagger Documentation](http://localhost:3000/api-docs)
+
+---
+
+## 🌐 Environment Variables
+
+### Backend (.env)
+```bash
+# Server Configuration
+PORT=3000
+NODE_ENV=development
+
+# Database
+DATABASE_URL=mongodb://localhost:27017/totapakhii
+# or for PostgreSQL
+# DATABASE_URL=postgresql://username:password@localhost:5432/totapakhii
+
+# JWT
+JWT_SECRET=your-super-secret-jwt-key
+JWT_EXPIRES_IN=7d
+
+# External Services
+CLOUDINARY_NAME=your-cloudinary-name
+CLOUDINARY_API_KEY=your-api-key
+CLOUDINARY_API_SECRET=your-api-secret
+
+# Email Service
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+```
+
+### Frontend (.env.local)
+```bash
+# API Configuration
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+NEXT_PUBLIC_APP_URL=http://localhost:3001
+
+# External Services
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=your-ga-id
+NEXT_PUBLIC_SENTRY_DSN=your-sentry-dsn
+```
+
+---
+
+## 🧪 Testing
+
+### Running Tests
+```bash
+# Backend tests
+cd backend
+npm test
+
+# Frontend tests
+cd frontend
+npm test
+
+# Run all tests
+npm run test:all
+
+# Coverage report
+npm run test:coverage
+```
+
+### Test Structure
+- **Unit Tests**: Individual function testing
+- **Integration Tests**: API endpoint testing
+- **E2E Tests**: Full user journey testing
+
+---
+
+## 📦 Deployment
+
+### Production Build
+```bash
+# Build frontend
+cd frontend
+npm run build
+
+# Build backend
+cd backend
+npm run build
+```
+
+### Docker Deployment
+```bash
+# Build and run production containers
+docker-compose -f docker-compose.prod.yml up -d
+```
+
+### Cloud Deployment
+- **Frontend**: Vercel, Netlify, or AWS S3
+- **Backend**: Heroku, DigitalOcean, or AWS EC2
+- **Database**: MongoDB Atlas, AWS RDS, or DigitalOcean Databases
+
+---
 
 ## 🤝 Contributing
 
 We welcome contributions! Please follow these steps:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
 
-## 📝 License
+### Code Style
+- Follow ESLint and Prettier configurations
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [LangChain](https://langchain.com/) for the RAG framework
-- [Groq](https://groq.com/) for fast LLM inference
-- [Pinecone](https://www.pinecone.io/) for vector database
-- [Gradio](https://gradio.app/) for the web interface
-- [HuggingFace](https://huggingface.co/) for embedding models
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/yourusername/totapakhii/issues) page
-2. Create a new issue with detailed description
-3. Join our community discussions
+### Pull Request Guidelines
+- Provide clear description of changes
+- Include screenshots for UI changes
+- Ensure all tests pass
+- Update CHANGELOG.md if applicable
 
 ---
 
-**Made with ❤️ by [Ashikul Islam]**
+## 📄 License
 
-*Transform your documents into an intelligent conversational experience with TotaPakhii!*
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👥 Team
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/hey-ashik">
+          <img src="https://github.com/hey-ashik.png" width="100px;" alt="Ashik"/><br />
+          <sub><b>Ashik</b></sub>
+        </a><br />
+        <a href="https://github.com/hey-ashik/TotaPakhii_ServerFiles/commits?author=hey-ashik" title="Code">💻</a>
+        <a href="#maintenance-hey-ashik" title="Maintenance">🚧</a>
+      </td>
+      <!-- Add more team members as needed -->
+    </tr>
+  </table>
+</div>
+
+---
+
+## 📞 Support
+
+- **Documentation**: [Wiki](https://github.com/hey-ashik/TotaPakhii_ServerFiles/wiki)
+- **Issues**: [GitHub Issues](https://github.com/hey-ashik/TotaPakhii_ServerFiles/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/hey-ashik/TotaPakhii_ServerFiles/discussions)
+- **Email**: your-email@example.com
+
+---
+
+## 🙏 Acknowledgments
+
+- Special thanks to all contributors
+- Inspiration from [mention any inspirations]
+- Built with ❤️ by the TotaPakhii team
+
+---
+
+<div align="center">
+  <p>Made with ❤️ in Bangladesh 🇧🇩</p>
+  <p>⭐ Star this repo if you found it helpful!</p>
+</div>
