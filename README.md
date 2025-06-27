@@ -1,5 +1,4 @@
 
-Of course. Here is a single, comprehensive `README.md` file that merges the information from both projects. It is structured into distinct "Frontend" and "Backend" sections, each with its own architecture diagram to clearly illustrate its function.
 
 ---
 
